@@ -1,0 +1,107 @@
+/* Main Navigation Container */
+.nav-container {
+  display: flex;
+  justify-content: flex-end; /* Align links to the right */
+  align-items: center;
+  position: fixed;
+  top: 20px;
+  left: 50%; /* Position relative to the center */
+  transform: translateX(-50%);
+  padding: 10px 20px; /* Reduced padding for a more compact look */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 64px rgba(31, 38, 135, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 25px;
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+}
+
+.nav-links li {
+  margin: 0 15px; /* Reduced margin for better spacing */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #FFF;
+  font-size: 14px; /* Smaller font size for mobile */
+  font-weight: 600;
+  padding: 8px 12px; /* Reduced padding */
+  border-radius: 25px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+  background-color: rgba(78, 78, 242, 0.2);
+  color: #4E4EF2;
+}
+
+/* Logo Container */
+.nav-logo-container {
+  position: fixed;
+  top: 20px;
+  left: 15px; /* Position the logo to the left */
+  z-index: 1001; /* Ensure it stays above other elements */
+}
+
+.nav-logo {
+  height: 150px; /* Adjust logo size for mobile */
+  width: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-container {
+    width: 95%; /* Wider container for mobile */
+    padding: 10px 10px; /* Less padding on mobile */
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .nav-links {
+    display: none; /* Hide links by default on mobile */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    border-radius: 15px;
+    padding: 15px; /* Adjust padding */
+    width: 80%;
+    z-index: 999;
+  }
+
+  .nav-links.nav-links-mobile {
+    display: flex; /* Show links when mobile menu is toggled */
+  }
+
+  .nav-links li {
+    margin: 10px 0; /* Space between items */
+  }
+
+  .menu-icon {
+    display: block; /* Show the menu icon on mobile */
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  /* Smaller logo for mobile */
+  .nav-logo {
+    height: 80px; /* Further reduce logo size */
+  }
+}
+
+/* Hide menu icon on desktop screens */
+.menu-icon {
+  display: none;
+}
