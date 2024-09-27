@@ -1,16 +1,34 @@
-/* Main Navigation Container */
+/* General Styles */
+header {
+  position: relative;
+  width: 100%;
+}
+
+.nav-logo-container {
+  position: fixed;
+  top: 15px;
+  left: 20px;
+  z-index: 1001;
+}
+
+.nav-logo {
+  height: 120px;
+  width: auto;
+}
+
+/* Desktop Navigation Styles */
 .nav-container {
   display: flex;
-  justify-content: flex-end; /* Align links to the right */
+  justify-content: center;
   align-items: center;
   position: fixed;
   top: 20px;
-  left: 50%; /* Position relative to the center */
+  left: 50%;
   transform: translateX(-50%);
-  padding: 10px 20px; /* Reduced padding for a more compact look */
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(20px);
-  box-shadow: 0 8px 64px rgba(31, 38, 135, 0.37);
+  padding: 15px 30px;
+  background: rgba(255, 255, 255, 0.1); /* Transparent background for glass effect */
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37); /* Subtle shadow */
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 25px;
   z-index: 1000;
@@ -21,18 +39,19 @@
   display: flex;
   list-style: none;
   margin: 0;
+  padding: 0;
 }
 
 .nav-links li {
-  margin: 0 15px; /* Reduced margin for better spacing */
+  margin: 0 20px; /* Proper spacing for desktop */
 }
 
 .nav-links a {
   text-decoration: none;
-  color: #FFF;
-  font-size: 14px; /* Smaller font size for mobile */
+  color: #FFF; /* White text for better contrast */
+  font-size: 16px;
   font-weight: 600;
-  padding: 8px 12px; /* Reduced padding */
+  padding: 10px 15px;
   border-radius: 25px;
   transition: background-color 0.3s ease-in-out;
 }
@@ -42,66 +61,85 @@
   color: #4E4EF2;
 }
 
-/* Logo Container */
+/* Hide Bottom Navigation and Menu Icon on Desktop */
+.bottom-nav {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  /* Hide Desktop Nav Links */
+  .nav-container {
+    display: none; /* Hide the desktop nav links */
+  }
+
+  /* Show Bottom Nav for Mobile */
+  .bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 -8px 32px rgba(31, 38, 135, 0.37); /* Shadow effect */
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 24px 24px 0 0;
+    padding: 15px 0;
+    z-index: 999;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .bottom-nav a {
+    font-size: 24px;
+    color: #FFF;
+  }
+
+  .bottom-nav a:hover {
+    color: #4E4EF2; /* Highlight on hover */
+  }
+
+  /* Show Menu Icon */
+  .menu-icon {
+    display: block;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #FFF; /* Match text color */
+    z-index: 1001;
+  }
+
+/* Initial Logo Styles */
 .nav-logo-container {
-  position: fixed;
-  top: 20px;
-  left: 15px; /* Position the logo to the left */
-  z-index: 1001; /* Ensure it stays above other elements */
+  position: absolute;
+  top: 100px; /* Initially centered */
+  left: 50%; /* Initially centered */
+  transform: translate(-50%, -50%); /* Center */
+  z-index: 1001;
+  transition: all 0.5s ease-in-out; /* Smooth transitions */
 }
 
 .nav-logo {
-  height: 150px; /* Adjust logo size for mobile */
-  width: auto;
+  height: 150px; /* Initial logo size */
+  transition: all 0.5s ease-in-out; /* Smooth size transition */
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .nav-container {
-    width: 95%; /* Wider container for mobile */
-    padding: 10px 10px; /* Less padding on mobile */
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .nav-links {
-    display: none; /* Hide links by default on mobile */
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(15px);
-    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
-    border-radius: 15px;
-    padding: 15px; /* Adjust padding */
-    width: 80%;
-    z-index: 999;
-  }
-
-  .nav-links.nav-links-mobile {
-    display: flex; /* Show links when mobile menu is toggled */
-  }
-
-  .nav-links li {
-    margin: 10px 0; /* Space between items */
-  }
-
-  .menu-icon {
-    display: block; /* Show the menu icon on mobile */
-    font-size: 24px;
-    cursor: pointer;
-  }
-
-  /* Smaller logo for mobile */
-  .nav-logo {
-    height: 80px; /* Further reduce logo size */
-  }
+/* Scrolled Logo Styles */
+.scrolled .nav-logo-container {
+  position: fixed;
+  top: 20px; /* Margin from the top */
+  left: 20px; /* Margin from the left */
+  transform: translate(0, 0); /* Remove centering */
 }
 
-/* Hide menu icon on desktop screens */
-.menu-icon {
-  display: none;
+.scrolled .nav-logo {
+  height: 60px; /* Smaller logo size when scrolled */
+}
 }

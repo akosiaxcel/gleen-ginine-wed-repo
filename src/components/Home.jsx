@@ -5,6 +5,7 @@ const Home = () => {
   return (
     <div className="home-container">
       <div className="hero-image">
+        {/* Glass Card Container */}
         <div className="glass-card">
           <h1>Welcome to Our Wedding</h1>
           <p>
