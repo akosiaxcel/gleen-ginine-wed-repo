@@ -1,0 +1,179 @@
+/* Main Event Details Container */
+.event-details-container {
+  height: 100vh; /* Full height to allow scrolling if needed */
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  justify-content: flex-start; /* Align content at the top */
+  align-items: center;
+  position: relative;
+  background: url("../assets/GG Event-details.jpg") no-repeat center center/cover;
+  text-align: left;
+  padding: 20px;
+  padding-top: 20vh;
+  overflow-y: auto; /* Enable scrolling for long content */
+  transition: opacity 0.5s ease; /* Smooth transition */
+  animation: fadeIn 1s ease-in forwards; /* Fade-in animation for the container */
+}
+
+/* Dark Overlay */
+.event-details-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+/* Glass Card Styling */
+.event-details-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  z-index: 1;
+  max-width: 600px;
+  width: 90%;
+  color: #fff;
+  margin-bottom: 20px;
+  text-align: center;
+  opacity: 0; /* Initially hidden for fade-in effect */
+  animation: fadeIn 1s ease-in forwards;
+  animation-delay: 0.3s; /* Slight delay for staggered effect */
+}
+
+.event-details-card h4 {
+  font-family: 'BlackGold', sans-serif;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.event-details-card h2 {
+  font-size: 2rem;
+}
+
+.event-details-card h3, h5, h6 {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+/* Additional Info Styling */
+.additional-info-container {
+  position: relative;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  z-index: 1;
+  max-width: 500px;
+  width: 90%;
+  color: #fff;
+  margin-top: 20px;
+  overflow-y: auto; /* Enable scrolling for long content */
+  max-height: 70vh; /* Restrict height on smaller screens */
+  opacity: 0; /* Initially hidden for fade-in effect */
+  animation: fadeIn 1s ease-in forwards;
+  animation-delay: 0.6s; /* Longer delay for staggered effect */
+}
+
+/* Cursive Font for Additional Info Heading */
+.additional-info-container h4 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.additional-info-container h5 {
+  font-family: 'BlackGold', sans-serif;
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.additional-info-container h6 {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.additional-info-container p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Styling for Image in Additional Info */
+.info-image {
+  width: 100%; /* Full width of container */
+  max-width: 300px; /* Restrict maximum size */
+  display: block;
+  margin: 0 auto 20px auto;
+  border-radius: 10px;
+}
+/* Styling for Image in Additional Info */
+.info-image3 {
+  width: 20%; /* Full width of container */
+  max-width: 300px; /* Restrict maximum size */
+  display: block;
+  margin: 0 auto 20px auto;
+  border-radius: 10px;
+}
+
+
+/* Keyframes for Fade-In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Optional: Adds slight upward motion */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+  .event-details-container {
+    padding: 10px;
+    padding-top: 20vh;
+    padding-bottom: 10vh;
+    overflow-y: scroll; /* Allow scrolling */
+    height: auto; /* Let the container grow with content */
+  }
+
+  .event-details-card {
+    padding: 20px;
+    width: 100%;
+    max-width: 90%;
+  }
+
+  .additional-info-container {
+    margin-top: 10px;
+    max-height: 60vh; /* Reduce height further for smaller screens */
+    padding: 15px;
+    overflow-y: auto; /* Allow scrolling inside the container */
+  }
+
+  .info-image {
+    max-width: 80%; /* Shrink image */
+  }
+  .info-image3 {
+    max-width: 80%; /* Shrink image */
+  }
+
+  .additional-info-container p {
+    font-size: 0.9rem;
+  }
+}
+

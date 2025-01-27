@@ -16,7 +16,6 @@ function App() {
         <Route path="/rsvp" element={<RSVP />} />
         <Route path="/gallery" element={<Gallery />} />
       </Routes>
-      <Home/>
     </Router>
   );
 }
