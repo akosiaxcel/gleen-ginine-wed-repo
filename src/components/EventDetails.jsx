@@ -21,10 +21,10 @@ const EventDetails = () => {
           <i className="fas fa-church" aria-hidden="true"></i> FELLOWSHIP BAPTIST CHURCH
         </h3>
         <h6>
-          <i className="fas fa-church" aria-hidden="true"></i> Reception will follow at:
+          <i></i> Reception will follow at:
         </h6>
         <h4>
-          <i className="fas fa-church" aria-hidden="true"></i> VISTA ALMAR, Himamaylan City
+          <i></i> VISTA ALMAR, Himamaylan City
         </h4>
       </div>
 
@@ -39,12 +39,17 @@ const EventDetails = () => {
         <h5>Guests</h5>
         <img src={dressCodeImage3} alt="Formal Dress Code" className="info-image3" />
         <h6> Ladies: Long Gown/Dress or Maxi Dress <br></br>Gentlemen: Long-sleeve or Short-sleeve Formal Polo -pair it with nice pants and shoes-Color: Champagne Beige <br></br>Note: Please do not wear T-shirts
-        polo-shirts, maong/demin pants or rubber shoes.</h6><br></br>
+        polo-shirts, maong/denim pants or rubber shoes.</h6><br></br>
         <h5>Note on Gifts</h5>
         <h6>We are blessed with love, laughter, and everything we need.<br></br>
         Your presence and prayers are the greatest gift you could give.<br></br>
         Howerver, should you wish to bless us further, a MONETARY GIFT would be warmly appreciated.</h6>
       </div>
+
+      {/* Footer Section */}
+      <footer className="footer">
+        <p>&copy; 2025 All Rights Reserved | Created by <a href="https://wapdev.xyz" target="_blank" rel="noopener noreferrer">wapdev.xyz</a></p>
+      </footer>
     </div>
   );
 };

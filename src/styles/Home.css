@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   background-color: #f5f5f5;
+  position: relative; /* Ensure positioning for fixed icons */
 }
 
 /* Hero Image */
@@ -80,29 +81,78 @@
   margin-top: 10%; /* Top margin */
 }
 
-.view-details-button:hover {
+.event-button:hover {
   background-color: #2b7ede; /* Hover color */
 }
 
-/* Keyframe Animations */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+/* Camera Icon Styling */
+.camera-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.5); /* Lighten the background for contrast */
+  color: #333; /* Dark color for the icon to make it stand out */
+  font-size: 30px; /* Larger icon size for better visibility */
+  border: none;
+  border-radius: 50%; /* Make the icon circular */
+  width: 60px; /* Increase icon size */
+  height: 60px; /* Increase icon size */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: fixed; /* Fixed position for mobile */
+  bottom: 70px; /* Adjust the vertical position above the home icon */
+  right: 20px; /* Adjust horizontal position */
+  z-index: 100; /* Ensure it's above other elements */
 }
 
-@keyframes slideUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px); /* Start below */
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0); /* Move into place */
-  }
+.camera-icon:hover {
+  background-color: #2b7ede; /* Hover color */
+  color: white; /* Change icon color on hover */
+}
+
+/* Home Icon Styling */
+.home-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px; /* Increase size of the home icon as well */
+  height: 60px;
+  background: rgba(255, 255, 255, 0.7); /* Transparent background with more contrast */
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 30px; /* Larger icon size for better visibility */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.home-icon:hover {
+  background-color: #2b7ede;
+  color: white; /* Change color on hover */
+}
+
+/* Home Icon Styling */
+.home-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.home-icon:hover {
+  background-color: #2b7ede;
 }
 
 /* Footer Styles */
@@ -142,7 +192,7 @@
     font-size: 10px;
   }
 
-  .view-details-button {
+  .event-button {
     font-size: 1rem;
     padding: 10px 20px;
     margin-top: 30%; /* Less top margin on mobile */
@@ -156,13 +206,33 @@
   .footer a {
     font-size: 0.85rem;
   }
+
+  .camera-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    bottom: 60px; /* Adjust position for smaller screens */
+  }
+
+  .home-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 480px) {
-  .view-details-button {
-    font-size: 0.9rem;
-    padding: 8px 16px;
-    margin-top: 3%; /* Less top margin on very small screens */
+  .camera-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    bottom: 90px; /* Further adjustment for very small screens */
+  }
+
+  .home-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
   }
 
   .footer {
@@ -172,5 +242,26 @@
 
   .footer a {
     font-size: 0.75rem; /* Scale the link text down slightly */
+  }
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px); /* Start slightly below */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Move into place */
   }
 }

@@ -19,6 +19,11 @@ const Home = () => {
         </div>
       </div>
 
+      {/* Camera Icon */}
+      <Link to="/gallery" className="camera-icon-link">
+        <i className="fas fa-camera camera-icon"></i>
+      </Link>
+
       {/* Footer Section */}
       <footer className="footer">
         <p>&copy; 2025 All Rights Reserved | Created by <a href="https://wapdev.xyz" target="_blank" rel="noopener noreferrer">wapdev.xyz</a></p>
